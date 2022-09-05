@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Financeira</title>
+</head>
+<body>
+    <h3>Calcule seu lucro!</h3>
+    <button onclick="iniciar()">Iniciar</button>
+    <div id="div_info"></div>
+    <div id="div_resultado"></div>
+    </b>
+</body>
+</html>
+<script>
+    function iniciar() {
+        div_info.innerHTML = 'Defina a unidade de medida para o cálculo <br>'
+        div_info.innerHTML += '<button onclick="ha()">Hectares</button>'
+        div_info.innerHTML += '<button onclick="m()">M²</button>'
+    }
+    function ha() {
+        div_info.innerHTML += '<br> Agora insira o tamanho da sua plantação: <br>'
+        div_info.innerHTML += '<input id="in_medida_ha"> <button onclick="calcular_ha()">Calcular</button>'
+
+    }
+    function m() {
+        div_info.innerHTML += '<br> Agora insira o tamanho da sua plantação: <br>'
+        div_info.innerHTML += '<input id="in_medida_m"> <button onclick="calcular_m()">Calcular</button>'
+
+    }
+    function calcular_ha() {
+            var ha = Number(in_medida_ha.value)
+            var sacas = ha * 150
+            var kg = sacas * 60
+            var toneladas = kg/1000
+            var lucro_bru = 225000 * ha
+            var lucro_liq = 210000 * ha
+            var perda_ton = toneladas - (toneladas * 0.2) 
+            var perda_din = (lucro_liq * 0.2)
+            var gasto_sensor = 7500 * ha
+            var lucro_total = lucro_bru - gasto_sensor
+            var aumento_lucro = lucro_total - (lucro_liq - perda_din)
+
+            div_resultado.innerHTML = `De acordo com os dados inseridos, você produz cerca de ${sacas} sacas de café,
+             entretanto cerca de 20% da produção é perdida devido a doenças, equivalente a ${perda_ton} toneladas e <b style="color: red;">R$${perda_din}</b>. Ao adquirir nossos
+             serviços seu lucro líquido pode chegar a <b style="color: green;">R$${lucro_total}</b>, totalizando <b style="color: green;">R$${aumento_lucro}</b> de aumento, incluindo todo o gasto com os sensores.`
+        }
+        function calcular_m() {
+            var ha = Number(in_medida_m.value)/10000
+            var sacas = ha * 150
+            var kg = 150 * 60
+            var toneladas = kg/1000
+            var lucro_bru = 225000 * ha
+            var lucro_liq = 210000 * ha
+            var perda_ton = toneladas - (toneladas * 0.2) 
+            var perda_din = (lucro_liq * 0.2)
+            var gasto_sensor = 7500 * ha
+            var lucro_total = lucro_bru - gasto_sensor
+            var aumento_lucro = lucro_total - (lucro_liq - perda_din)
+
+            div_resultado.innerHTML = `De acordo com os dados inseridos, você produz cerca de ${sacas} sacas de café,
+             entretanto cerca de 20% da produção é perdida devido a doenças, equivalente a ${perda_ton} toneladas e <b style="color: red;">R$${perda_din}</b>. Ao adquirir nossos
+             serviços seu lucro líquido pode chegar a <b style="color: green;">R$${lucro_total}</b>, totalizando <b style="color: green;">R$${aumento_lucro}</b> de aumento, incluindo todo o gasto com os sensores`
+        }
+</script>
