@@ -7,7 +7,6 @@ id int primary key auto_increment,
 email varchar(60),
 senha varchar(20),
 nome varchar(100),
-CPF char(11),
 constraint chkemail check (email like '%@%')
 );
 
@@ -31,11 +30,11 @@ momento datetime default current_timestamp
 );
 
 -- INSERINDO DADOS
-insert into cadastro (email, senha, nome, CPF) values
-('diego.vieira@sptech.school','endiegoagronomo','Diego Vieira','15746824864'),
-('lucas.bsilva@sptech.school','lucas123','Lucas Bonfim','3216547894'),
-('estela.polverini@sptech.school','seeyoulater','Estela Polverini','85916863249'),
-('victor.pereira@sptech.school','12345678','Victor Augusto','54123654125');
+insert into cadastro (email, senha, nome) values
+('diego.vieira@sptech.school','endiegoagronomo','Diego Vieira'),
+('lucas.bsilva@sptech.school','lucas123','Lucas Bonfim'),
+('estela.polverini@sptech.school','seeyoulater','Estela Polverini'),
+('victor.pereira@sptech.school','12345678','Victor Augusto');
 
 insert into plantacao (especie, estado, cidade, medida, tamanho) values
 ('Arábica','MG','Carmo de Minas','ha',2),
@@ -44,12 +43,10 @@ insert into plantacao (especie, estado, cidade, medida, tamanho) values
 ('Arábica','MS','Eldorado','ha',1);
 
 insert into controle (temperatura, umidade) values
-(15.9,70.0),
-(15.8,70.0),
-(15.8,70.0),
-(15.7,70.3),
-(15.6,70.2),
-(15.6,70.2),
-(15.6,70.1);
-
-
+(15.9,50.0),
+(15.8,50.0),
+(15.8,50.0),
+(15.7,50.3),
+(15.6,50.2),
+(15.6,50.2),
+(15.6,50.1);
