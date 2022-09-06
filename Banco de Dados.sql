@@ -18,7 +18,8 @@ estado char(2),
 cidade varchar(30),
 medida varchar(30),
 tamanho int,
-constraint chkmedida check (medida in('m²','ha'))
+constraint chkmedida check (medida in('m²','ha')),
+constraint chkestado check (estado in ('AC','AL','AP','AM','BA','CE','ES','GO','MA','MT','MS','MG','PA','PB','PR','PE','PI','RJ','RN','RS','RO','RR','SC','SP','SE','TO'))
 );
 
 -- CRIANDO TABELA CONTROLE
@@ -50,3 +51,5 @@ insert into controle (temperatura, umidade) values
 (15.6,50.2),
 (15.6,50.2),
 (15.6,50.1);
+
+
