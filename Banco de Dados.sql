@@ -22,8 +22,8 @@ constraint chkmedida check (medida in('m²','ha')),
 constraint chkestado check (estado in ('AC','AL','AP','AM','BA','CE','ES','GO','MA','MT','MS','MG','PA','PB','PR','PE','PI','RJ','RN','RS','RO','RR','SC','SP','SE','TO'))
 );
 
--- CRIANDO TABELA CONTROLE
-create table Controle(
+-- CRIANDO TABELA MÉTRICA
+create table Metrica(
 idControle int primary key auto_increment,
 temperatura double,
 umidade float,
@@ -43,7 +43,7 @@ insert into Plantacao (especie, estado, cidade, medida, tamanho) values
 ('Eugenioides','SP','Joanópolis','m²',10),
 ('Arábica','MS','Eldorado','ha',1);
 
-insert into Controle (temperatura, umidade) values
+insert into Metrica (temperatura, umidade) values
 (15.9,50.0),
 (15.8,50.0),
 (15.8,50.0),
@@ -51,5 +51,12 @@ insert into Controle (temperatura, umidade) values
 (15.6,50.2),
 (15.6,50.2),
 (15.6,50.1);
+
+select * from Cadastro;
+
+select * from Metrica;
+
+select * from Plantacao;
+
 
 
