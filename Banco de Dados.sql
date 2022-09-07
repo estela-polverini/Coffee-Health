@@ -52,11 +52,6 @@ insert into Metrica (temperatura, umidade) values
 (15.6,50.2),
 (15.6,50.1);
 
-select * from Cadastro;
-
-select * from Metrica;
-
-select * from Plantacao;
 
 
 
