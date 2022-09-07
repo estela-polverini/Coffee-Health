@@ -36,7 +36,7 @@
             var kg = sacas * 60
             var toneladas = kg/1000
             var lucro_bru = 225000 * ha
-            var lucro_liq = 210000 * ha
+            var lucro_liq = lucro_bru - (15000 * ha)
             var perda_ton = toneladas - (toneladas * 0.2) 
             var perda_din = (lucro_liq * 0.2)
             var gasto_sensor = 7500 * ha
@@ -53,7 +53,7 @@
             var kg = 150 * 60
             var toneladas = kg/1000
             var lucro_bru = 225000 * ha
-            var lucro_liq = 210000 * ha
+            var lucro_liq = lucro_bru - (15000 * ha)
             var perda_ton = toneladas - (toneladas * 0.2) 
             var perda_din = (lucro_liq * 0.2)
             var gasto_sensor = 7500 * ha
